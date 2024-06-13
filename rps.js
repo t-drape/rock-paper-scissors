@@ -13,11 +13,16 @@ while (!(UserChoice === "rock")
         UserChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
         UserChoice = UserChoice.toLowerCase();
     }
-// Create list of all possible computer choices (3)
-
 // Randomly select one of three choices
-let choice = Math.getRandomInt(3);
-console.log(choice);
+let choice = Math.floor(Math.random() * 3);
+if (choice === 0) {
+    ComputerChoice = "rock";
+} else if (choice === 1) {
+    ComputerChoice = "paper";
+} else if (choice === 2) {
+    ComputerChoice = "scissors";
+}
+console.log(ComputerChoice);
 // Assign choice to computer choice
 // Compare ComputerChoice to UserChoice
 // Use game logic to decide winner
