@@ -14,6 +14,7 @@ while (!(UserChoice === "rock")
         UserChoice = UserChoice.toLowerCase();
     }
 // Randomly select one of three choices
+// Assign choice to computer choice
 let choice = Math.floor(Math.random() * 3);
 if (choice === 0) {
     ComputerChoice = "rock";
@@ -22,14 +23,38 @@ if (choice === 0) {
 } else if (choice === 2) {
     ComputerChoice = "scissors";
 }
-console.log(ComputerChoice);
-// Assign choice to computer choice
 // Compare ComputerChoice to UserChoice
+console.log(ComputerChoice)
+console.log(UserChoice)
+
 // Use game logic to decide winner
 // If same choice, tie
+if (UserChoice === ComputerChoice) {
+    console.log("Tie!");
 // If rock and paper, paper
+} else if ((UserChoice === "rock" || ComputerChoice === "rock") && (UserChoice === "paper" || ComputerChoice === "paper")) {
+    if (UserChoice === "paper") {
+        console.log("Winner!");
+    } else {
+        console.log("Loser!");
+    }
+
 // If rock and scissors, rock
+} else if ((UserChoice === "rock" || ComputerChoice === "rock") && (UserChoice === "scissors" || ComputerChoice === "scissors")) {
+    if (UserChoice === "rock") {
+        console.log("Winner!");
+    } else {
+        console.log("Loser!");
+    }
 // If paper and scissors, scissors
+} else if ((UserChoice === "paper" || ComputerChoice === "paper") && (UserChoice === "scissors" || ComputerChoice === "scissors")) {
+    if (UserChoice === "scissors") {
+        console.log("Winner!");
+    } else {
+        console.log("Loser!");
+    }
+}
+
 // Create variable UserWins
 // Create variable ComputerWins
 // Create loop to run all previous functions
