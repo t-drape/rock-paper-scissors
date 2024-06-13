@@ -1,57 +1,15 @@
-// Create variable UserWins
-let userWins = 0;
-// Create variable ComputerWins
-let computerWins = 0;
+// Create variable humanScore
+let humanScore = 0;
+// Create variable computerScore
+let computerScore = 0;
 // Create loop to run all previous functions
 // Loop game five times total
-for (let i = 0; i < 5; i++) {
-    // Compare computerChoice to humanChoice
-    console.log(computerChoice)
-    console.log(humanChoice)
-
-    // Use game logic to decide winner
-    // If same choice, tie
-    if (humanChoice === computerChoice) {
-        console.log("Tie!");
-    // If rock and paper, paper
-    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "paper" || computerChoice === "paper")) {
-        if (humanChoice === "paper") {
-            console.log("Winner!");
-            userWins++; 
-        } else {
-            console.log("Loser!");
-            computerWins++;
-        }
-
-    // If rock and scissors, rock
-    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "scissors" || computerChoice === "scissors")) {
-        if (humanChoice === "rock") {
-            console.log("Winner!");
-            userWins++;
-        } else {
-            console.log("Loser!");
-            computerWins++;
-        }
-    // If paper and scissors, scissors
-    } else if ((humanChoice === "paper" || computerChoice === "paper") && (humanChoice === "scissors" || computerChoice === "scissors")) {
-        if (humanChoice === "scissors") {
-            console.log("Winner!");
-            userWins++;
-        } else {
-            console.log("Loser!");
-            computerWins++;
-        }
-    }
-    console.log(computerWins)
-    console.log(userWins)
-}
-// After loop, compare UserWins to Computer Wins
-// If UserWins is higher, print a victorious message
-// If ComputerWins is higher, print a failure message
-
+// After loop, compare humanScore to Computer Wins
+// If humanScore is higher, print a victorious message
+// If computerScore is higher, print a failure message
 
 // Create humanChoice function
-function humanChoice() {
+function getHumanChoice() {
     // Create variable humanChoice
     let humanChoice = 0;
     // Prompt user for value for humanChoice
@@ -65,11 +23,12 @@ function humanChoice() {
             humanChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
             humanChoice = humanChoice.toLowerCase();
         }
+    return humanChoice;
 
 }
 
 // Create computerChoice
-function computerChoice() {
+function getComputerChoice() {
         // Randomly select one of three choices
     // Assign choice to computer choice
     let choice = Math.floor(Math.random() * 3);
@@ -80,41 +39,50 @@ function computerChoice() {
     } else if (choice === 2) {
         computerChoice = "scissors";
     }
+    return computerChoice;
 }
 
 // Create playRound function
-function playRound(humanChoice, computerChoice) {
-        // Use game logic to decide winner
+function playRound(playerChoice, computerChoice) {
+    // Use game logic to decide winner
     // If same choice, tie
-    if (humanChoice === computerChoice) {
-        console.log("Tie!");
+    if (playerChoice === computerChoice) {
+        console.log(`Tie! ${playerChoice} equals ${computerChoice}.`);
     // If rock and paper, paper
-    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "paper" || computerChoice === "paper")) {
-        if (humanChoice === "paper") {
-            console.log("Winner!");
-            userWins++; 
+    } else if ((playerChoice === "rock" || computerChoice === "rock") && (playerChoice === "paper" || computerChoice === "paper")) {
+        if (playerChoice === "paper") {
+            console.log("Winner! Paper beats Rock!");
+            humanScore++; 
         } else {
-            console.log("Loser!");
-            computerWins++;
+            console.log("Loser! Paper beats Rock!");
+            computerScore++;
         }
 
     // If rock and scissors, rock
-    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "scissors" || computerChoice === "scissors")) {
-        if (humanChoice === "rock") {
-            console.log("Winner!");
-            userWins++;
+    } else if ((playerChoice === "rock" || computerChoice === "rock") && (playerChoice === "scissors" || computerChoice === "scissors")) {
+        if (playerChoice === "rock") {
+            console.log("Winner! Rock beats Scissors!");
+            humanScore++;
         } else {
-            console.log("Loser!");
-            computerWins++;
+            console.log("Loser! Rock beats Scissors!");
+            computerScore++;
         }
     // If paper and scissors, scissors
-    } else if ((humanChoice === "paper" || computerChoice === "paper") && (humanChoice === "scissors" || computerChoice === "scissors")) {
-        if (humanChoice === "scissors") {
-            console.log("Winner!");
-            userWins++;
+    } else if ((playerChoice === "paper" || computerChoice === "paper") && (playerChoice === "scissors" || computerChoice === "scissors")) {
+        if (playerChoice === "scissors") {
+            console.log("Winner! Scissors beats Paper!");
+            humanScore++;
         } else {
-            console.log("Loser!");
-            computerWins++;
+            console.log("Loser! Scissors beats Paper!");
+            computerScore++;
         }
     }
 }
+
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
+
+
