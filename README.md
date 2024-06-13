@@ -1,1 +1,3 @@
 # rock-paper-scissors
+Prior to starting: 
+    In this project, I will attempt to recreate the classic game "Rock Paper Scissors". Using a boilerplate HTML file, I will code all of the necessary logic in Javascript. The game is played in console. The player will compete against the computer in a five-round matchup. The game will receive input from the user as to their choice of actions, while the computer will randomly select one of the three options. Each head-to-head will count as a round, and the program will keep track of how many rounds the user (and computer) have won. At the end, the program computes the winner of the best-of-five game, and displays a final message accordingly.
