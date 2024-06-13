@@ -5,17 +5,17 @@ let computerWins = 0;
 // Create loop to run all previous functions
 // Loop game five times total
 for (let i = 0; i < 5; i++) {
-    // Compare ComputerChoice to UserChoice
-    console.log(ComputerChoice)
-    console.log(UserChoice)
+    // Compare computerChoice to humanChoice
+    console.log(computerChoice)
+    console.log(humanChoice)
 
     // Use game logic to decide winner
     // If same choice, tie
-    if (UserChoice === ComputerChoice) {
+    if (humanChoice === computerChoice) {
         console.log("Tie!");
     // If rock and paper, paper
-    } else if ((UserChoice === "rock" || ComputerChoice === "rock") && (UserChoice === "paper" || ComputerChoice === "paper")) {
-        if (UserChoice === "paper") {
+    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "paper" || computerChoice === "paper")) {
+        if (humanChoice === "paper") {
             console.log("Winner!");
             userWins++; 
         } else {
@@ -24,8 +24,8 @@ for (let i = 0; i < 5; i++) {
         }
 
     // If rock and scissors, rock
-    } else if ((UserChoice === "rock" || ComputerChoice === "rock") && (UserChoice === "scissors" || ComputerChoice === "scissors")) {
-        if (UserChoice === "rock") {
+    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "scissors" || computerChoice === "scissors")) {
+        if (humanChoice === "rock") {
             console.log("Winner!");
             userWins++;
         } else {
@@ -33,8 +33,8 @@ for (let i = 0; i < 5; i++) {
             computerWins++;
         }
     // If paper and scissors, scissors
-    } else if ((UserChoice === "paper" || ComputerChoice === "paper") && (UserChoice === "scissors" || ComputerChoice === "scissors")) {
-        if (UserChoice === "scissors") {
+    } else if ((humanChoice === "paper" || computerChoice === "paper") && (humanChoice === "scissors" || computerChoice === "scissors")) {
+        if (humanChoice === "scissors") {
             console.log("Winner!");
             userWins++;
         } else {
@@ -52,18 +52,18 @@ for (let i = 0; i < 5; i++) {
 
 // Create humanChoice function
 function humanChoice() {
-    // Create variable UserChoice
-    let UserChoice = 0;
-    // Prompt user for value for UserChoice
-    UserChoice = prompt("Rock, Paper, or Scissors?", "Rock");
-    // Make sure UserChoice is case invalid
-    UserChoice = UserChoice.toLowerCase();
-    // Check if UserChoice is valid
-    while (!(UserChoice === "rock") 
-        && !(UserChoice === "paper") 
-        && !(UserChoice === "scissors")) {
-            UserChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
-            UserChoice = UserChoice.toLowerCase();
+    // Create variable humanChoice
+    let humanChoice = 0;
+    // Prompt user for value for humanChoice
+    humanChoice = prompt("Rock, Paper, or Scissors?", "Rock");
+    // Make sure humanChoice is case invalid
+    humanChoice = humanChoice.toLowerCase();
+    // Check if humanChoice is valid
+    while (!(humanChoice === "rock") 
+        && !(humanChoice === "paper") 
+        && !(humanChoice === "scissors")) {
+            humanChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
+            humanChoice = humanChoice.toLowerCase();
         }
 
 }
@@ -74,15 +74,47 @@ function computerChoice() {
     // Assign choice to computer choice
     let choice = Math.floor(Math.random() * 3);
     if (choice === 0) {
-        ComputerChoice = "rock";
+        computerChoice = "rock";
     } else if (choice === 1) {
-        ComputerChoice = "paper";
+        computerChoice = "paper";
     } else if (choice === 2) {
-        ComputerChoice = "scissors";
+        computerChoice = "scissors";
     }
 }
 
 // Create playRound function
-function playRound(humanChoice, ComputerChoice) {
+function playRound(humanChoice, computerChoice) {
+        // Use game logic to decide winner
+    // If same choice, tie
+    if (humanChoice === computerChoice) {
+        console.log("Tie!");
+    // If rock and paper, paper
+    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "paper" || computerChoice === "paper")) {
+        if (humanChoice === "paper") {
+            console.log("Winner!");
+            userWins++; 
+        } else {
+            console.log("Loser!");
+            computerWins++;
+        }
 
+    // If rock and scissors, rock
+    } else if ((humanChoice === "rock" || computerChoice === "rock") && (humanChoice === "scissors" || computerChoice === "scissors")) {
+        if (humanChoice === "rock") {
+            console.log("Winner!");
+            userWins++;
+        } else {
+            console.log("Loser!");
+            computerWins++;
+        }
+    // If paper and scissors, scissors
+    } else if ((humanChoice === "paper" || computerChoice === "paper") && (humanChoice === "scissors" || computerChoice === "scissors")) {
+        if (humanChoice === "scissors") {
+            console.log("Winner!");
+            userWins++;
+        } else {
+            console.log("Loser!");
+            computerWins++;
+        }
+    }
 }
