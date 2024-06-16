@@ -15,16 +15,19 @@ function playGame() {
         let humanChoice = 0;
         // Prompt user for value for humanChoice
         humanChoice = prompt("Rock, Paper, or Scissors?", "Rock");
-        // Make sure humanChoice is case invalid
-        humanChoice = humanChoice.toLowerCase();
-        // Check if humanChoice is valid
-        while (!(humanChoice === "rock") 
-            && !(humanChoice === "paper") 
-            && !(humanChoice === "scissors")) {
-                humanChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
-                humanChoice = humanChoice.toLowerCase();
-            }
-        return humanChoice;
+
+        if (humanChoice !== null) {
+            // Make sure humanChoice is case invalid
+            humanChoice = humanChoice.toLowerCase();
+            // Check if humanChoice is valid
+            while (!(humanChoice === "rock") 
+                && !(humanChoice === "paper") 
+                && !(humanChoice === "scissors")) {
+                    humanChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
+                    humanChoice = humanChoice.toLowerCase();
+                }
+            return humanChoice;
+        }
 
     }
 
@@ -83,20 +86,20 @@ function playGame() {
     // Create loop to run all previous functions
     // Loop game five times total
     // After each loop, increment UserWins or ComputerWins
-    for (let i = 0; i < 5; i++) {
-        const humanSelection = getHumanChoice();
+    const humanSelection = getHumanChoice();
+    if (humanSelection !== undefined) {
         const computerSelection = getComputerChoice();
         playRound(humanSelection, computerSelection);
-    }
-    // After loop, compare UserWins to Computer Wins
-    // If UserWins is higher, print a victorious message
-    // If ComputerWins is higher, print a failure message
-    if (humanScore > computerScore) {
-        console.log("Congratulations! You beat the computer!");
-    } else if (computerScore > humanScore) {
-        console.log("You lost to a computer! The robot takeover is about to happen...");
-    } else {
-        console.log("You tied a computer?");
+            // After loop, compare UserWins to Computer Wins
+        // If UserWins is higher, print a victorious message
+        // If ComputerWins is higher, print a failure message
+        if (humanScore > computerScore) {
+            console.log("Congratulations! You beat the computer!");
+        } else if (computerScore > humanScore) {
+            console.log("You lost to a computer! The robot takeover is about to happen...");
+        } else {
+            console.log("You tied a computer?");
+        }
     }
 }
 
