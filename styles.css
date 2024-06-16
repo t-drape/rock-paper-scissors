@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
+}
+
+.heading {
+    align-self: center;
+    padding: 25px 0 25px 0;
+}
+
+ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    justify-content: space-around;
+}
+
+li {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.round_scores {
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.play_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.play_round_btn {
+    width: 250px;
+    height: 50px;
+}
+
+.weapon_title {
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.choices {
+    margin-top: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.choice {
+    width: 100px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+}
