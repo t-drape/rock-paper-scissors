@@ -59,6 +59,10 @@ li {
     margin-bottom: 30px;
 }
 
+.computer_score, .human_score {
+    display: flex;
+    gap: 5px;
+}
 
 .choices {
     display: flex;
@@ -87,13 +91,13 @@ li {
 .round_choices {
     display: flex;
     flex-direction: column;
-    margin: 50px 50px 0 50px;
+    margin: 25px 50px 0 50px;
     gap: 35px;
 }
 
 .human_choice, .computer_choice {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     font-size: 24px;
     flex-wrap: wrap;
     font-family: "Courier New", monospace;

@@ -1,12 +1,12 @@
 
 // Create variable humanScore
 let humanScore = 0;
-let human_score = document.querySelector(".human_score");
-human_score.textContent = "Human Score: " + humanScore;
+let human_score = document.querySelector(".human_content");
+human_score.textContent = humanScore;
 // Create variable computerScore
 let computerScore = 0;
-let computer_score = document.querySelector(".computer_score");
-computer_score.textContent = "Computer Score: " + computerScore;
+let computer_score = document.querySelector(".computer_content");
+computer_score.textContent = computerScore;
 // Create loop to run all previous functions
 // Loop game five times total
 // After loop, compare humanScore to Computer Wins
@@ -86,11 +86,11 @@ function playRound(playerChoice, computerChoice) {
             computerScore++;
         }
     }
-    human_score = document.querySelector(".human_score");
-    human_score.textContent = "Human Score: " + humanScore;
+    human_score = document.querySelector(".human_content");
+    human_score.textContent = humanScore;
 
-    computer_score = document.querySelector(".computer_score");
-    computer_score.textContent = "Computer Score: " + computerScore;
+    computer_score = document.querySelector(".computer_content");
+    computer_score.textContent = computerScore;
 }
 
 // Create loop to run all previous functions
@@ -135,7 +135,7 @@ choice_btns = document.querySelectorAll(".choices button");
 const var_choice = document.querySelector(".var_choice");
 const comp_choice = document.querySelector(".comp_choice");
 
-console.log(human_score);
+console.log(human_score.textContent);
 choice_btns.forEach((button) => {
     button.addEventListener("click", () => {
         if (!(available_human_choices.includes(humanChoice))) {
@@ -144,6 +144,7 @@ choice_btns.forEach((button) => {
             computerChoice = getComputerChoice();
             comp_choice.textContent = computerChoice;
             playRound(humanChoice, computerChoice);
+            console.log(human_score.textContent);
 
         }
     });
