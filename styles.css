@@ -1,19 +1,20 @@
 body {
+    min-height: 100vh;
     margin: 0;
     padding: 0;
+    background-color: honeydew;
     display: flex;
     flex-direction: column;
-}
-
-h1 {
-    margin: 0;
-    padding: 0;
-    font-weight: 800;
+    justify-content: space-around;
 }
 
 .heading {
-    align-self: center;
-    padding: 25px 0 25px 0;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 50px;
 }
 
 ul {
@@ -34,6 +35,7 @@ li {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 50px;
 }
 
 .play_btn {
@@ -45,34 +47,70 @@ li {
 .play_round_btn {
     width: 250px;
     height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .weapon_title {
-    padding: 50px 0;
-    display: flex;
-    justify-content: center;
+    margin-top: 75px;
+    text-align: center;
     font-size: 24px;
+    margin-bottom: 30px;
 }
 
+
 .choices {
-    margin-top: 0;
     display: flex;
     justify-content: space-around;
 }
 
+
 .choice {
-    width: 100px;
     height: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
 }
 
-button {
+.choice > button {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
+    width: 125px;
     height: 50px;
+}
+
+.round_choices {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 50px 0 50px;
+    gap: 35px;
+}
+
+.human_choice, .computer_choice {
+    display: flex;
+    gap: 10px;
+    font-size: 2vw;
+    font-family: "Courier New", monospace;
+    font-weight: normal;
+}
+
+.result {
+    text-align: center;
+    font-family: "Courier New", monospace;
+    font-size: 1.5vw;
+    margin-bottom: 25px;
+    font-weight: normal;
+}
+
+.message {
+    margin-top: 5px;
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;
 }

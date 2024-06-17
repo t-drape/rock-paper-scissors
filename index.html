@@ -3,11 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- <script defer src="./rps.js"></script> -->
         <link rel="stylesheet" href="./styles.css">
     </head>
     <body>
-        <div class="heading"><h1>Rock Paper Scissors</h1></div>
+        <div class="heading">Rock Paper Scissors</div>
         <div class="round_scores">
             <ul>
                 <li class="human-score">Human Score: "ex"</li>
@@ -16,27 +17,28 @@
             <div class="play_btn">
                 <button class="play_round_btn">Play Round</button></div>
         </div>
-        <div class="player_choices">
+        <div class="container">
             <div class="weapon_title">Choose Your Weapon</div>
             <div class="choices">
                 <div class="choice">Rock
-                        <button>Choose Me!</button>
+                        <button class="rock">Choose Me!</button>
                 </div>
                 <div class="choice">Paper
-                        <button>Choose Me!</button>
+                        <button class="paper">Choose Me!</button>
                 </div>
                 <div class="choice">Scissors
-                        <button>Choose Me!</button>
+                        <button class="scissors">Choose Me!</button>
                 </div>
             </div>
-        </div>
-        <div class="round_choices">
-            <ul>
-                <li class="human-choice">Human Choice: "example"</li>
-                <li class="computer_choice">Computer Choice: "example"</li>
-            </ul>
-            <div class="result">
-                Result of Round: 
+            <div class="round_choices">
+                <ul>
+                    <li class="human_choice">Human Choice: <div class="var_choice">"paper"</div></li>
+                    <li class="computer_choice">Computer Choice: <div class="var_choice">"scissors"</div></li>
+                </ul>
+                <div class="result">
+                    Result of Round:
+                    <div class="message">"You lose! Paper beats Rock!"</div>
+                </div>
             </div>
         </div>
         
