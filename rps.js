@@ -101,9 +101,14 @@ function playGame() {
             console.log("You tied a computer?");
         }
     }
+    const human_score = document.querySelector(".human_score");
+    human_score.textContent += humanScore;
+
+    const computer_score = document.querySelector(".computer_score");
+    computer_score.textContent += computerScore;
 }
-
-
 playGame();
+
+// If Play Round button pressed, activate round
 
 

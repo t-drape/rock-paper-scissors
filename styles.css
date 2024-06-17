@@ -95,7 +95,8 @@ li {
 .human_choice, .computer_choice {
     display: flex;
     gap: 10px;
-    font-size: 2vw;
+    font-size: 24px;
+    flex-wrap: wrap;
     font-family: "Courier New", monospace;
     font-weight: normal;
 }
@@ -103,7 +104,7 @@ li {
 .result {
     text-align: center;
     font-family: "Courier New", monospace;
-    font-size: 1.5vw;
+    font-size: 24px;
     margin-bottom: 25px;
     font-weight: normal;
 }
