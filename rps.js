@@ -94,6 +94,7 @@ function playRound(playerChoice, computerChoice) {
 
     computer_score = document.querySelector(".computer_content");
     computer_score.textContent = computerScore;
+    message.style.visibility = "visible";
 }
 
 // Create loop to run all previous functions
@@ -122,12 +123,21 @@ const play_round_btn = document.querySelector(".play_round_btn");
 
 const container = document.querySelector(".container");
 container.style.visibility = "hidden";
+message.style.visible = "hidden";
 
 play_round_btn.addEventListener("click", () => {
+    if (play_round_btn.textContent === "Play New Game") {
+        humanScore = 0;
+        computerScore = 0;
+        human_score.textContent = humanScore;
+        // Create variable computerScore
+        computer_score.textContent = computerScore;
+        message.style.visibility = "hidden";
+    } 
+    play_round_btn.textContent = "Play Round";
     humanChoice = "";
     var_choice.textContent = "";
     comp_choice.textContent = "";
-    message.textContent = "";
     container.style.visibility = "visible";
     play_round_btn.style.visibility = "hidden";
 });
@@ -139,7 +149,6 @@ choice_btns = document.querySelectorAll(".choices button");
 const var_choice = document.querySelector(".var_choice");
 const comp_choice = document.querySelector(".comp_choice");
 
-humanScore = 4;
 
 choice_btns.forEach((button) => {
     button.addEventListener("click", () => {
@@ -155,6 +164,8 @@ choice_btns.forEach((button) => {
                 } else {
                     message.textContent = "You lost to a computer! The robot takeover is about to happen...";
                 }
+                play_round_btn.textContent = "Play New Game";
+                play_round_btn.style.visibility = "visible";
             } else {
                 play_round_btn.style.visibility = "visible";
             }
