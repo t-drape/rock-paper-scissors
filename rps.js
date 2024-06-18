@@ -94,7 +94,6 @@ function playRound(playerChoice, computerChoice) {
 
     computer_score = document.querySelector(".computer_content");
     computer_score.textContent = computerScore;
-    message.style.visibility = "visible";
 }
 
 // Create loop to run all previous functions
@@ -126,6 +125,7 @@ container.style.visibility = "hidden";
 message.style.visible = "hidden";
 
 play_round_btn.addEventListener("click", () => {
+    message.style.visibility = "hidden";
     if (play_round_btn.textContent === "Play New Game") {
         humanScore = 0;
         computerScore = 0;
@@ -161,13 +161,16 @@ choice_btns.forEach((button) => {
             if ((humanScore == 5) || (computerScore == 5)) {
                 if (humanScore == 5) {
                     message.textContent = "Congratulations! You beat the computer!";
+                    message.style.visibility = "visible";
                 } else {
                     message.textContent = "You lost to a computer! The robot takeover is about to happen...";
+                    message.style.visibility = "visible";
                 }
                 play_round_btn.textContent = "Play New Game";
                 play_round_btn.style.visibility = "visible";
             } else {
-                play_round_btn.style.visibility = "visible";
+                play_round_btn.style.visibility = "visible"; 
+                message.style.visibility = "visible";          
             }
         }
     });
