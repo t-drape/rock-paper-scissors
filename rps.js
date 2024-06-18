@@ -13,27 +13,29 @@ computer_score.textContent = computerScore;
 // If humanScore is higher, print a victorious message
 // If computerScore is higher, print a failure message
 
-// Create humanChoice function
-function getHumanChoice() {
-    // Create variable humanChoice
-    let humanChoice = 0;
-    // Prompt user for value for humanChoice
-    humanChoice = "rock";
+// No longer needed
 
-    if (humanChoice !== null) {
-        // Make sure humanChoice is case invalid
-        humanChoice = humanChoice.toLowerCase();
-        // Check if humanChoice is valid
-        while (!(humanChoice === "rock") 
-            && !(humanChoice === "paper") 
-            && !(humanChoice === "scissors")) {
-                humanChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
-                humanChoice = humanChoice.toLowerCase();
-            }
-        return humanChoice;
-    }
+// // Create humanChoice function
+// function getHumanChoice() {
+//     // Create variable humanChoice
+//     let humanChoice = 0;
+//     // Prompt user for value for humanChoice
+//     humanChoice = "rock";
 
-}
+//     if (humanChoice !== null) {
+//         // Make sure humanChoice is case invalid
+//         humanChoice = humanChoice.toLowerCase();
+//         // Check if humanChoice is valid
+//         while (!(humanChoice === "rock") 
+//             && !(humanChoice === "paper") 
+//             && !(humanChoice === "scissors")) {
+//                 humanChoice = prompt("Please select a valid value: Rock, Paper, or Scissors?");
+//                 humanChoice = humanChoice.toLowerCase();
+//             }
+//         return humanChoice;
+//     }
+
+// }
 
 // Create computerChoice
 function getComputerChoice() {
@@ -50,9 +52,10 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+let message = document.querySelector(".message");
+
 // Create playRound function
 function playRound(playerChoice, computerChoice) {
-    let message = document.querySelector(".message");
     // Use game logic to decide winner
     // If same choice, tie
     if (playerChoice === computerChoice) {
@@ -120,13 +123,14 @@ const play_round_btn = document.querySelector(".play_round_btn");
 const container = document.querySelector(".container");
 container.style.visibility = "hidden";
 
-const body = document.querySelector("body");
-
 play_round_btn.addEventListener("click", () => {
+    humanChoice = "";
+    var_choice.textContent = "";
+    comp_choice.textContent = "";
+    message.textContent = "";
     container.style.visibility = "visible";
+    play_round_btn.style.visibility = "hidden";
 });
-
-humanChoice = ""
 
 available_human_choices = ["rock", "paper", "scissors"];
 
@@ -135,7 +139,8 @@ choice_btns = document.querySelectorAll(".choices button");
 const var_choice = document.querySelector(".var_choice");
 const comp_choice = document.querySelector(".comp_choice");
 
-console.log(human_score.textContent);
+humanScore = 4;
+
 choice_btns.forEach((button) => {
     button.addEventListener("click", () => {
         if (!(available_human_choices.includes(humanChoice))) {
@@ -144,11 +149,24 @@ choice_btns.forEach((button) => {
             computerChoice = getComputerChoice();
             comp_choice.textContent = computerChoice;
             playRound(humanChoice, computerChoice);
-            console.log(human_score.textContent);
-
+            if ((humanScore == 5) || (computerScore == 5)) {
+                if (humanScore == 5) {
+                    message.textContent = "Congratulations! You beat the computer!";
+                } else {
+                    message.textContent = "You lost to a computer! The robot takeover is about to happen...";
+                }
+            } else {
+                play_round_btn.style.visibility = "visible";
+            }
         }
     });
 });
+
+// After each round reset all choices
+function playGame() {
+}
+
+
 
 
 
